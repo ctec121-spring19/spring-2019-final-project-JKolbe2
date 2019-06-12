@@ -27,6 +27,8 @@ class View:
     def __init__(self):
         self.win=GraphWin("Tic Tac Toe", 300, 400)
         self.win.setCoords(0, 0, 3, 4)
+        self.objectList = []
+        self.msg = Text(Point(2.5, 3.5), "")
 
         # horizontal lines
         Line(Point(0,1), Point(3,1)).draw(self.win)
@@ -67,6 +69,7 @@ class View:
     
         pt = self.win.getMouse()
         cellNum = int(pt.getY())*3 + int(pt.getX())
+        return cellNum
         
 
 
