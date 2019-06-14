@@ -1,24 +1,6 @@
 # View.py
 # 
 # For TicTacToe
-'''
-notes:
-
-self.win=graph.win(parameters)
-win.setCoords((0,0), (3,0), (3,3), (0,3))
-def draw o.(self, cellnum)
-circ = circle()
-circ.draw(self.win)
-
-v = view()
-v.drawo(cellnum) #this calls the function that draws an o 
-
-cellnum = int(point.gety()) * 3 + int(point.getx())
-
-for errors if getx( < 3 and get y( < 3))
-
-
-'''
 
 from graphics import *
 
@@ -33,43 +15,72 @@ class View:
         # horizontal lines
         Line(Point(0,1), Point(3,1)).draw(self.win)
 
+        Line(Point(0,2), Point(3,2)).draw(self.win)
 
-        '''
-         #line1 = Line(Point(100,0), Point(100,300))
-         #line1.setOutline("black")
-         #line1.draw(self.win)
+        Line(Point(0,3), Point(3,3)).draw(self.win)
 
-         line2 = Line(Point(200,0), Point(200,300))
-         line2.setOutline("black")
-         line2.draw(self.win)
+        # vertical lines
+        Line(Point(1,0), Point(1,3)).draw(self.win)
 
-         line3 = Line(Point(0,100), Point(300,100))
-         line3.setOutline("black")
-         line3.draw(self.win)
+        Line(Point(2,0), Point(2,3)).draw(self.win)
 
-         line4 = Line(Point(0,200), Point(300,200))
-         line4.setOutline("black")
-         line4.draw(self.win) 
+    def playerclick(self):
 
-         '''   
-
-
-    def drawO(self, cellnum):
-        drawo = Circle(20)
-        drawo.setOutline("red")
-        drawO()
-
-    def drawX(self, cellnum): 
-        drawx = Line(Point(0,0), Point(20,20)), Line(Point(20,0), (0,20))
-        drawx.setOutline("red")
-        drawX()
-
-
-    def getmouse():
-    
         pt = self.win.getMouse()
+        pt.getY()
+        pt.getX()
         cellNum = int(pt.getY())*3 + int(pt.getX())
         return cellNum
+
+    def drawO(self, cellnum):
+        if cellnum == 0: 
+            self.objectList.appened(Circle(Point(0.5, 0.5), 0.75).draw(self.win))
+        elif cellnum == 1:
+            self.objectList.appened(Circle(Point(1.5, 0.5), 0.75).draw(self.win))
+        elif cellnum == 2:
+            self.objectList.appened(Circle(Point(2.5, 0.5), 0.75).draw(self.win))
+        elif cellnum == 3:
+            self.objectList.appened(Circle(Point(0.5, 1.5), 0.75).draw(self.win))
+        elif cellnum == 4:
+            self.objectList.appened(Circle(Point(1.5, 1.5), 0.75).draw(self.win))
+        elif cellnum == 5:
+            self.objectList.appened(Circle(Point(2.5, 1.5), 0.75).draw(self.win))
+        elif cellnum == 6:
+            self.objectList.appened(Circle(Point(0.5, 2.5), 0.75).draw(self.win))
+        elif cellnum == 7:
+           self.objectList.appened(Circle(Point(1.5, 2.5), 0.75).draw(self.win))
+        elif cellnum == 8:
+            self.objectList.appened(Circle(Point(2.5, 2.5), 0.75).draw(self.win))    
+
+    def drawX(self, cellnum): 
+        if cellnum == 0:
+            self.items.append(Line(Point(0.05,0.05), Point(0.95,0.95)).draw(self.win)), Line(Point(0.95,0.05), Point(0.05,0.95)).draw(self.win)
+        elif cellnum == 1:
+            self.items.append(Line(Point(1.05,0.05), Point(1.95,0.95)).draw(self.win)), Line(Point(1.95,0.05), Point(1.05,0.95)).draw(self.win)
+        elif cellnum == 2:
+            self.items.append(Line(Point(2.05,0.05), Point(2.95,0.95)).draw(self.win)), Line(Point(2.95,0.05), Point(2.05,0.95)).draw(self.win)
+        elif cellnum == 3:
+            self.items.append(Line(Point(0.05,1.05), Point(0.95,1.95)).draw(self.win)), Line(Point(0.95,1.05), Point(0.05,1.95)).draw(self.win)
+        elif cellnum == 4:
+            self.items.append(Line(Point(1.05,1.05), Point(1.95,1.95)).draw(self.win)), Line(Point(1.95,1.05), Point(1.05,1.95)).draw(self.win)
+        elif cellnum == 5:
+            self.items.append(Line(Point(2.05,1.05), Point(2.95,1.95)).draw(self.win)), Line(Point(2.95,1.05), Point(2.05,1.95)).draw(self.win)
+        elif cellnum == 6:
+            self.items.append(Line(Point(0.05,2.05), Point(0.95,2.95)).draw(self.win)), Line(Point(0.95,2.05), Point(0.05,2.95)).draw(self.win)
+        elif cellnum == 7:
+            self.items.append(Line(Point(1.05,2.05), Point(1.95,2.95)).draw(self.win)), Line(Point(1.95,2.05), Point(1.05,2.95)).draw(self.win)
+        elif cellnum == 8:
+            self.items.append(Line(Point(2.05,2.05), Point(2.95,2.95)).draw(self.win)), Line(Point(2.95,2.05), Point(2.05,2.95)).draw(self.win)
+
+    def reset(self):
+        for object in self.objectList():
+            object.undraw()
+        self.objectList.clear()
+
+    
+
+
+    
         
 
 

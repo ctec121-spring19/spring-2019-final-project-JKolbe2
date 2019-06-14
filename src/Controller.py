@@ -20,12 +20,13 @@ while TRUE:
 class Controller:
 
     def __init__(self):
+        self.v = View
+        self.m = Model
+    def gametime(self):
+        pass
+    def ControllerTest():
         # delete and enter your code here
         pass
-
-def ControllerTest():
-    # delete and enter your code here
-    pass
 
 if __name__ == "__main__":
     ControllerTest()
