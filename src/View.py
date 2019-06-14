@@ -30,9 +30,9 @@ class View:
         y = pt.getY()
         x = pt.getX()
         if x <= 3 and y<=3:
-            cellNum = int(pt.getY())*3 + int(pt.getX())
+            cellnum = int(pt.getY())*3 + int(pt.getX())
         else:
-            return cellNum
+            return cellnum == -1 
 
     def drawO(self, cellnum):
         if cellnum == 0: 

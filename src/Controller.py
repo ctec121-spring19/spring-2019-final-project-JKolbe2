@@ -25,7 +25,7 @@ class Controller:
         self.player = 'X'
 
 
-    def gametime(self):
+    def gametime(self): 
         pass
 
     def PlayAGame(self):
