@@ -2,7 +2,11 @@
 # 
 # For TicTacToe
 
+# Imports the graphics library. 
+
 from graphics import *
+
+#defines the view class 
 
 class View:
 
@@ -24,6 +28,8 @@ class View:
 
         Line(Point(2,0), Point(2,3)).draw(self.win)
 
+    #takes the players click and converts the click to a cellnumber
+
     def playerclick(self):
 
         pt = self.win.getMouse()
@@ -33,6 +39,8 @@ class View:
             cellnum = int(pt.getY())*3 + int(pt.getX())
         else:
             return cellnum == -1 
+
+    #code for drawing the Os
 
     def drawO(self, cellnum):
         if cellnum == 0: 
@@ -52,7 +60,9 @@ class View:
         elif cellnum == 7:
            self.objectList.append(Circle(Point(1.5, 2.5), 0.45).draw(self.win))
         elif cellnum == 8:
-            self.objectList.append(Circle(Point(2.5, 2.5), 0.45).draw(self.win))    
+            self.objectList.append(Circle(Point(2.5, 2.5), 0.45).draw(self.win))   
+
+    #code for drawing the X's 
 
     def drawX(self, cellnum): 
         if cellnum == 0:
@@ -73,6 +83,8 @@ class View:
             self.objectList.append(Line(Point(1.05,2.05), Point(1.95,2.95)).draw(self.win)), Line(Point(1.95,2.05), Point(1.05,2.95)).draw(self.win)
         elif cellnum == 8:
             self.objectList.append(Line(Point(2.05,2.05), Point(2.95,2.95)).draw(self.win)), Line(Point(2.95,2.05), Point(2.05,2.95)).draw(self.win)
+
+    #code to reset the grid after the game
 
     def reset(self):
         for object in self.objectList:

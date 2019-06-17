@@ -2,7 +2,11 @@
 #
 # For TicTacToe
 
+#imports the view for use in this code.
+
 from View import View
+
+#start of the model class.
 
 class Model:
 
@@ -15,7 +19,7 @@ class Model:
         self.Oclicks = []
 
 
-    #tells the view to draw the x's based on the click
+    #tells the view to draw the x's based on the click and adds them to the list. 
 
     def PlayerX(self, playerclick):
         if playerclick == 0:
@@ -45,7 +49,7 @@ class Model:
         elif playerclick == 8:
             self.v.drawX(8)
             self.Xclicks.append(8)
-        elif playerclick <0 or >8:
+        elif playerclick < 0 or playerclick > 8:
             set.self.v.msg("Please click in an empty cell")
 
     #same as above but for O's
@@ -78,27 +82,33 @@ class Model:
         elif playerclick == 8:
             self.v.drawO(8)
             self.Oclicks.append(8)
-        elif playerclick <0 or >8:
+        elif playerclick <0 or playerclick > 8:
             set.self.v.msg("Please click in an empty cell")
+
+    #Different win options for player x or o, or whether or not there is a draw. 
 
     def winOptions(self):
         if (0 in self.Xclicks and 1 in self.Xclicks and 2 in self.Xclicks) or (3 in self.Xclicks and 4 in self.Xclicks and 5 in self.Xclicks) or (6 in self.Xclicks and 7 in self.Xclicks and 8 in self.Xclicks)
         or (0 in self.Xclicks and 3 in self.Xclicks and 6 in self.Xclicks) or (1 in self.Xclicks and 5 in self.Xclicks and 7 in self.Xclicks) or (2 in self.Xclicks and 5 in self.Xclicks and 8 in self.Xclicks)
-        or (0 in self.Xclicks and 5 in self.Xclicks and 8 in self.Xclicks) or (2 in self.Xclicks and 4 in self.Xclicks and 6 in self.Xclicks)
+        or (0 in self.Xclicks and 5 in self.Xclicks and 8 in self.Xclicks) or (2 in self.Xclicks and 4 in self.Xclicks and 6 in self.Xclicks):
             set.self.v.msg("X wins!!!!")
-        if (0 in self.Oclicks and 1 in self.Oclicks and 2 in self.Oclicks) or (3 in self.Oclicks and 4 in self.Oclicks and 5 in self.Oclicks) or (6 in self.Oclicks and 7 in self.Oclicks and 8 in self.Oclicks)
+        elif (0 in self.Oclicks and 1 in self.Oclicks and 2 in self.Oclicks) or (3 in self.Oclicks and 4 in self.Oclicks and 5 in self.Oclicks) or (6 in self.Oclicks and 7 in self.Oclicks and 8 in self.Oclicks)
         or (0 in self.Oclicks and 3 in self.Oclicks and 6 in self.Oclicks) or (1 in self.Oclicks and 5 in self.Oclicks and 7 in self.Oclicks) or (2 in self.Oclicks and 5 in self.Oclicks and 8 in self.Oclicks)
-        or (0 in self.Oclicks and 5 in self.Oclicks and 8 in self.Oclicks) or (2 in self.Oclicks and 4 in self.Oclicks and 6 in self.Oclicks)
+        or (0 in self.Oclicks and 5 in self.Oclicks and 8 in self.Oclicks) or (2 in self.Oclicks and 4 in self.Oclicks and 6 in self.Oclicks):
             set.self.v.msg("O wins!!!!")
-        if len(self.Xclicks) or len(self.Oclicks) == 9:
+        elif len(self.Xclicks) + len(self.Oclicks) == 9:
             set.self.v.msg("The game is a draw!!!")
+
+    #resets the list. 
 
     def ResetClickLists():
         self.Xclicks.clear()
         self.Oclicks.clear()
 
+    #model test, which I do not believe needs anything more than just the pass. 
+
 def ModelTest():
-    # delete and enter your code here
+
     pass
 
 if __name__ == "__main__":
