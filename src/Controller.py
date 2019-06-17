@@ -22,9 +22,8 @@ class Controller:
         done = False
         while not done:
             self.playerturns()
-            self.anothergame()
 
-    #the code that defines the players turns. 
+    #the code that defines the players turns and checks that the click is valid. 
     
     def playerturns(self):
 
@@ -32,3 +31,17 @@ class Controller:
         self.v.msg.setText("Player X goes first.")
 
         while True:
+
+            cellnum = self.v.playerclick()
+
+            while cellnum:
+                if cellnum < 0 or cellnum > 8:
+                    self.v.msg.setText("Please click within the grid")
+                elif cellnum in self.m.Xclicks:
+                    self.v.msg.setText("Please click in an unoccupied square")
+                elif cellnum in self.m.Oclicks:
+                    self.v.msg.setText("Please click in an unoccupied square")
+                else: 
+                    break  
+
+
